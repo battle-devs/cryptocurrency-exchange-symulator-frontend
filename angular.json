@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "cryptocurrency-exchange-symulator",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "cryptocurrency-exchange-symulator": {
+      "projectType": "application",
+      "root": "apps/cryptocurrency-exchange-symulator",
+      "sourceRoot": "apps/cryptocurrency-exchange-symulator/src",
+      "prefix": "inzynieria-oprogramowania",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/cryptocurrency-exchange-symulator",
+            "index": "apps/cryptocurrency-exchange-symulator/src/index.html",
+            "main": "apps/cryptocurrency-exchange-symulator/src/main.ts",
+            "polyfills": "apps/cryptocurrency-exchange-symulator/src/polyfills.ts",
+            "tsConfig": "apps/cryptocurrency-exchange-symulator/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/cryptocurrency-exchange-symulator/src/favicon.ico",
+              "apps/cryptocurrency-exchange-symulator/src/assets"
+            ],
+            "styles": [
+              "apps/cryptocurrency-exchange-symulator/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/cryptocurrency-exchange-symulator/src/environments/environment.ts",
+                  "with": "apps/cryptocurrency-exchange-symulator/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "cryptocurrency-exchange-symulator:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "cryptocurrency-exchange-symulator:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cryptocurrency-exchange-symulator:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/cryptocurrency-exchange-symulator/src/**/*.ts",
+              "apps/cryptocurrency-exchange-symulator/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/cryptocurrency-exchange-symulator"],
+          "options": {
+            "jestConfig": "apps/cryptocurrency-exchange-symulator/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "cryptocurrency-exchange-symulator-e2e": {
+      "root": "apps/cryptocurrency-exchange-symulator-e2e",
+      "sourceRoot": "apps/cryptocurrency-exchange-symulator-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/cryptocurrency-exchange-symulator-e2e/cypress.json",
+            "tsConfig": "apps/cryptocurrency-exchange-symulator-e2e/tsconfig.e2e.json",
+            "devServerTarget": "cryptocurrency-exchange-symulator:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cryptocurrency-exchange-symulator:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/cryptocurrency-exchange-symulator-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

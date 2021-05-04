@@ -1,0 +1,30 @@
+{
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "affected": {
+    "defaultBase": "master"
+  },
+  "npmScope": "inzynieria-oprogramowania",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "cryptocurrency-exchange-symulator": {
+      "tags": []
+    },
+    "cryptocurrency-exchange-symulator-e2e": {
+      "tags": [],
+      "implicitDependencies": ["cryptocurrency-exchange-symulator"]
+    }
+  }
+}
