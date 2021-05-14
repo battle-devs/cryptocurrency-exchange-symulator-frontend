@@ -5,8 +5,6 @@ import { BannerComponent } from './home-page/banner/banner.component';
 import { CurrencyListComponent } from './home-page/currency-list/currency-list.component';
 import { CurrencyComponent } from './home-page/currency-list/currency/currency.component';
 
-
-
 @NgModule({
   declarations: [
     HomePageComponent,
