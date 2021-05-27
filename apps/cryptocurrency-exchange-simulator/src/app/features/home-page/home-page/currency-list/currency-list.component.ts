@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import {
+  cryptocurrencies,
+  CryptocurrencyBlock,
+} from '../../models/cryptocurrency.data';
 
 @Component({
   selector: 'inzynieria-oprogramowania-currency-list',
   templateUrl: './currency-list.component.html',
-  styleUrls: ['./currency-list.component.css']
+  styleUrls: ['./currency-list.component.scss'],
 })
-export class CurrencyListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class CurrencyListComponent {
+  public cryptocurrencies = cryptocurrencies;
 }

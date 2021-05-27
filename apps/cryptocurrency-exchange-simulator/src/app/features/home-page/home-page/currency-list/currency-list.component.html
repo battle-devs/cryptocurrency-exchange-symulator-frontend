@@ -1,1 +1,7 @@
-<p>currency-list works!</p>
+<div class="currency-list">
+  <div class="currency" *ngFor="let crypto of cryptocurrencies">
+    <inzynieria-oprogramowania-currency
+      [cryptocurrency]="crypto"
+    ></inzynieria-oprogramowania-currency>
+  </div>
+</div>
