@@ -3,7 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "cryptocurrency-exchange-symulator",
+  "defaultProject": "cryptocurrency-exchange-simulator",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -32,27 +32,27 @@
     }
   },
   "projects": {
-    "cryptocurrency-exchange-symulator": {
+    "cryptocurrency-exchange-simulator": {
       "projectType": "application",
-      "root": "apps/cryptocurrency-exchange-symulator",
-      "sourceRoot": "apps/cryptocurrency-exchange-symulator/src",
+      "root": "apps/cryptocurrency-exchange-simulator",
+      "sourceRoot": "apps/cryptocurrency-exchange-simulator/src",
       "prefix": "inzynieria-oprogramowania",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/cryptocurrency-exchange-symulator",
-            "index": "apps/cryptocurrency-exchange-symulator/src/index.html",
-            "main": "apps/cryptocurrency-exchange-symulator/src/main.ts",
-            "polyfills": "apps/cryptocurrency-exchange-symulator/src/polyfills.ts",
-            "tsConfig": "apps/cryptocurrency-exchange-symulator/tsconfig.app.json",
+            "outputPath": "dist/apps/cryptocurrency-exchange-simulator",
+            "index": "apps/cryptocurrency-exchange-simulator/src/index.html",
+            "main": "apps/cryptocurrency-exchange-simulator/src/main.ts",
+            "polyfills": "apps/cryptocurrency-exchange-simulator/src/polyfills.ts",
+            "tsConfig": "apps/cryptocurrency-exchange-simulator/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/cryptocurrency-exchange-symulator/src/favicon.ico",
-              "apps/cryptocurrency-exchange-symulator/src/assets"
+              "apps/cryptocurrency-exchange-simulator/src/favicon.ico",
+              "apps/cryptocurrency-exchange-simulator/src/assets"
             ],
             "styles": [
-              "apps/cryptocurrency-exchange-symulator/src/styles.scss"
+              "apps/cryptocurrency-exchange-simulator/src/styles.scss"
             ],
             "scripts": []
           },
@@ -60,8 +60,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/cryptocurrency-exchange-symulator/src/environments/environment.ts",
-                  "with": "apps/cryptocurrency-exchange-symulator/src/environments/environment.prod.ts"
+                  "replace": "apps/cryptocurrency-exchange-simulator/src/environments/environment.ts",
+                  "with": "apps/cryptocurrency-exchange-simulator/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -89,54 +89,54 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cryptocurrency-exchange-symulator:build"
+            "browserTarget": "cryptocurrency-exchange-simulator:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cryptocurrency-exchange-symulator:build:production"
+              "browserTarget": "cryptocurrency-exchange-simulator:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cryptocurrency-exchange-symulator:build"
+            "browserTarget": "cryptocurrency-exchange-simulator:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/cryptocurrency-exchange-symulator/src/**/*.ts",
-              "apps/cryptocurrency-exchange-symulator/src/**/*.html"
+              "apps/cryptocurrency-exchange-simulator/src/**/*.ts",
+              "apps/cryptocurrency-exchange-simulator/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/cryptocurrency-exchange-symulator"],
+          "outputs": ["coverage/apps/cryptocurrency-exchange-simulator"],
           "options": {
-            "jestConfig": "apps/cryptocurrency-exchange-symulator/jest.config.js",
+            "jestConfig": "apps/cryptocurrency-exchange-simulator/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "cryptocurrency-exchange-symulator-e2e": {
-      "root": "apps/cryptocurrency-exchange-symulator-e2e",
-      "sourceRoot": "apps/cryptocurrency-exchange-symulator-e2e/src",
+    "cryptocurrency-exchange-simulator-e2e": {
+      "root": "apps/cryptocurrency-exchange-simulator-e2e",
+      "sourceRoot": "apps/cryptocurrency-exchange-simulator-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/cryptocurrency-exchange-symulator-e2e/cypress.json",
-            "tsConfig": "apps/cryptocurrency-exchange-symulator-e2e/tsconfig.e2e.json",
-            "devServerTarget": "cryptocurrency-exchange-symulator:serve"
+            "cypressConfig": "apps/cryptocurrency-exchange-simulator-e2e/cypress.json",
+            "tsConfig": "apps/cryptocurrency-exchange-simulator-e2e/tsconfig.e2e.json",
+            "devServerTarget": "cryptocurrency-exchange-simulator:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cryptocurrency-exchange-symulator:serve:production"
+              "devServerTarget": "cryptocurrency-exchange-simulator:serve:production"
             }
           }
         },
@@ -144,7 +144,7 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/cryptocurrency-exchange-symulator-e2e/**/*.{js,ts}"
+              "apps/cryptocurrency-exchange-simulator-e2e/**/*.{js,ts}"
             ]
           }
         }

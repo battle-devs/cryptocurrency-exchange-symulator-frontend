@@ -19,12 +19,12 @@
     }
   },
   "projects": {
-    "cryptocurrency-exchange-symulator": {
+    "cryptocurrency-exchange-simulator": {
       "tags": []
     },
-    "cryptocurrency-exchange-symulator-e2e": {
+    "cryptocurrency-exchange-simulator-e2e": {
       "tags": [],
-      "implicitDependencies": ["cryptocurrency-exchange-symulator"]
+      "implicitDependencies": ["cryptocurrency-exchange-simulator"]
     }
   }
 }
