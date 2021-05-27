@@ -5,6 +5,9 @@
   },
   "defaultProject": "cryptocurrency-exchange-simulator",
   "schematics": {
+    "@schematics/angular:component": {
+     "style": "scss"
+    },
     "@nrwl/angular": {
       "application": {
         "linter": "eslint"
@@ -114,7 +117,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/cryptocurrency-exchange-simulator"],
+          "outputs": [
+            "coverage/apps/cryptocurrency-exchange-simulator"
+          ],
           "options": {
             "jestConfig": "apps/cryptocurrency-exchange-simulator/jest.config.js",
             "passWithNoTests": true

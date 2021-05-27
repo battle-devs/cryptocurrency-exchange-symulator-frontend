@@ -1,5 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/theme';
+
 body {
   margin: 0;
   background-color: rgb(50, 50, 50);
+}
+
+p {
+  color: $white-light;
+  font-family: $font-family-text;
 }
