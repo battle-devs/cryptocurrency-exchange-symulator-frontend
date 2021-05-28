@@ -1,5 +1,7 @@
 .banner-component {
-  background-image: url("~apps/cryptocurrency-exchange-simulator/src/assets/cryptocurrency-banner.jpg");
+  background-image: url('~apps/cryptocurrency-exchange-simulator/src/assets/cryptocurrency-banner.jpg');
   background-size: cover;
   height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
