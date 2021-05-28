@@ -1,29 +1,63 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
+// angular material theme
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat-core();
+@import 'assets/theme';
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$cryptocurrency-exchange-simulator-primary: mat-palette($mat-indigo);
-$cryptocurrency-exchange-simulator-accent: mat-palette(
-  $mat-pink,
-  A200,
-  A100,
-  A400
+// define color palette
+$purple-palette: (
+  50: #e9eaf4,
+  100: #c7cae4,
+  200: #a3a8d2,
+  300: #8087bf,
+  400: #666cb2,
+  500: #4e52a5,
+  600: #484a9b,
+  700: #3f418f,
+  800: #383783,
+  900: #2b266d,
+  contrast: (
+    50: $black-dark-opacity,
+    100: $black-dark-opacity,
+    200: $black-dark-opacity,
+    300: $black-dark-opacity,
+    400: $black-dark-opacity,
+    500: $white-light,
+    600: $white-light,
+    700: $white-light,
+    800: $white-light,
+    900: $white-light,
+  ),
 );
 
-// The warn palette is optional (defaults to red).
+$yellow-palette: (
+  50: #fffee5,
+  100: #fefabf,
+  200: #fdf794,
+  300: #fbf265,
+  400: #f8ee3b,
+  500: #fdf000,
+  600: #fddd00,
+  700: #fec400,
+  800: #ffaa00,
+  900: #ff7d00,
+  contrast: (
+    50: $black-dark-opacity,
+    100: $black-dark-opacity,
+    200: $black-dark-opacity,
+    300: $black-dark-opacity,
+    400: $black-dark-opacity,
+    500: $black-dark-opacity,
+    600: $black-dark-opacity,
+    700: $white-light,
+    800: $white-light,
+    900: $white-light,
+  ),
+);
+
+$cryptocurrency-exchange-simulator-primary: mat-palette($purple-palette);
+$cryptocurrency-exchange-simulator-accent: mat-palette($yellow-palette);
 $cryptocurrency-exchange-simulator-warn: mat-palette($mat-red);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
 $cryptocurrency-exchange-simulator-theme: mat-light-theme(
   (
     color: (
@@ -34,15 +68,10 @@ $cryptocurrency-exchange-simulator-theme: mat-light-theme(
   )
 );
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($cryptocurrency-exchange-simulator-theme);
 
-@import 'assets/theme';
-
 // breakpoints - 688px, 992px, 1312px
-
+// general rules
 html,
 body {
   height: 100%;
