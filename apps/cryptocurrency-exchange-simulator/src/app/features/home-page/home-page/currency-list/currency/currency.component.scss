@@ -8,9 +8,15 @@
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
-  min-width: 140px;
+  min-width: 30vw;
   max-height: 115px;
   .price {
     white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cryptocurrency-block {
+    min-width: 35vw;
   }
 }
