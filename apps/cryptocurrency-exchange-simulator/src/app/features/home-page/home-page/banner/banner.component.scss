@@ -4,4 +4,17 @@
   height: 300px;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  justify-content: space-evenly;
+  .banner-title {
+    align-self: center;
+    margin-bottom: 100px;
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  .register {
+    align-self: flex-end;
+    margin-bottom: 50px;
+  }
 }
