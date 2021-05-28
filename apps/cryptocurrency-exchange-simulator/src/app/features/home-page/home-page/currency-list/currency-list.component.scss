@@ -1,10 +1,18 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
 .currency-list {
   display: flex;
-  margin: 5vw;
+  margin: 2vw;
   flex-wrap: wrap;
   justify-content: center;
 
   .currency {
     flex: 0 0 20vw;
+  }
+
+  .currency-footer {
+    width: 100%;
+    color: $white-light;
+    text-align: center;
   }
 }
