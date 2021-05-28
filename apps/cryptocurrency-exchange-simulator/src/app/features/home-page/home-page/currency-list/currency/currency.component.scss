@@ -3,5 +3,14 @@
 .cryptocurrency-block {
   height: 16vh;
   margin: 3vh;
-  background-color: $black-light;
+  background-color: $black-dark;
+  border-radius: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  min-width: 140px;
+  max-height: 115px;
+  .price {
+    white-space: nowrap;
+  }
 }
