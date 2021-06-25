@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": "apps/cryptocurrency-exchange-symulator-e2e/tsconfig.*?.json"
+        "project": "apps/cryptocurrency-exchange-simulator-e2e/tsconfig.*?.json"
       },
       "rules": {}
     },

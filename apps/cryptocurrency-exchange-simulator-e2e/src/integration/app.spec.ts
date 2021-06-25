@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('cryptocurrency-exchange-symulator', () => {
+describe('cryptocurrency-exchange-simulator', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('cryptocurrency-exchange-symulator', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to cryptocurrency-exchange-symulator!');
+    getGreeting().contains('Welcome to cryptocurrency-exchange-simulator!');
   });
 });

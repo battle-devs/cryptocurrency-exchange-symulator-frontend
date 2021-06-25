@@ -1,0 +1,123 @@
+// angular material theme
+@import '~@angular/material/theming';
+@include mat-core();
+@import 'assets/theme';
+
+// define color palette
+$purple-palette: (
+  50: #e9eaf4,
+  100: #c7cae4,
+  200: #a3a8d2,
+  300: #8087bf,
+  400: #666cb2,
+  500: #4e52a5,
+  600: #484a9b,
+  700: #3f418f,
+  800: #383783,
+  900: #2b266d,
+  contrast: (
+    50: $black-dark-opacity,
+    100: $black-dark-opacity,
+    200: $black-dark-opacity,
+    300: $black-dark-opacity,
+    400: $black-dark-opacity,
+    500: $white-light,
+    600: $white-light,
+    700: $white-light,
+    800: $white-light,
+    900: $white-light,
+  ),
+);
+
+$yellow-palette: (
+  50: #fffee5,
+  100: #fefabf,
+  200: #fdf794,
+  300: #fbf265,
+  400: #f8ee3b,
+  500: #fdf000,
+  600: #fddd00,
+  700: #fec400,
+  800: #ffaa00,
+  900: #ff7d00,
+  contrast: (
+    50: $black-dark-opacity,
+    100: $black-dark-opacity,
+    200: $black-dark-opacity,
+    300: $black-dark-opacity,
+    400: $black-dark-opacity,
+    500: $black-dark-opacity,
+    600: $black-dark-opacity,
+    700: $white-light,
+    800: $white-light,
+    900: $white-light,
+  ),
+);
+
+$cryptocurrency-exchange-simulator-primary: mat-palette($purple-palette);
+$cryptocurrency-exchange-simulator-accent: mat-palette($yellow-palette);
+$cryptocurrency-exchange-simulator-warn: mat-palette($mat-red);
+
+$cryptocurrency-exchange-simulator-theme: mat-light-theme(
+  (
+    color: (
+      primary: $cryptocurrency-exchange-simulator-primary,
+      accent: $cryptocurrency-exchange-simulator-accent,
+      warn: $cryptocurrency-exchange-simulator-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($cryptocurrency-exchange-simulator-theme);
+
+// breakpoints - 768px, 375px
+// general rules
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $black-light;
+}
+
+p,
+button {
+  color: $white-light;
+  font-family: $font-family-text;
+  font-size: $font-size-paragraph;
+
+  &.title {
+    font-size: $font-size-title;
+    font-family: $font-family-title;
+  }
+}
+
+.small-btn {
+  height: 36px;
+  width: 120px;
+}
+
+.large-btn {
+  width: 200px;
+  height: 50px;
+}
+
+// custom scrollbar
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: rgb(60, 60, 60);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: $black-light;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $black-dark;
+}

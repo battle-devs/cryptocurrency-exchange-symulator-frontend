@@ -6,7 +6,7 @@
   "pluginsFile": "./src/plugins/index",
   "supportFile": "./src/support/index.ts",
   "video": true,
-  "videosFolder": "../../dist/cypress/apps/cryptocurrency-exchange-symulator-e2e/videos",
-  "screenshotsFolder": "../../dist/cypress/apps/cryptocurrency-exchange-symulator-e2e/screenshots",
+  "videosFolder": "../../dist/cypress/apps/cryptocurrency-exchange-simulator-e2e/videos",
+  "screenshotsFolder": "../../dist/cypress/apps/cryptocurrency-exchange-simulator-e2e/screenshots",
   "chromeWebSecurity": false
 }
