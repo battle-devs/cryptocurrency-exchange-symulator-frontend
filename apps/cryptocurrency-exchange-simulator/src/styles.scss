@@ -70,7 +70,7 @@ $cryptocurrency-exchange-simulator-theme: mat-light-theme(
 
 @include angular-material-theme($cryptocurrency-exchange-simulator-theme);
 
-// breakpoints - 688px, 992px, 1312px
+// breakpoints - 768px, 375px
 // general rules
 html,
 body {
@@ -82,7 +82,8 @@ body {
   background-color: $black-light;
 }
 
-p {
+p,
+button {
   color: $white-light;
   font-family: $font-family-text;
   font-size: $font-size-paragraph;
@@ -91,6 +92,16 @@ p {
     font-size: $font-size-title;
     font-family: $font-family-title;
   }
+}
+
+.small-btn {
+  height: 36px;
+  width: 120px;
+}
+
+.large-btn {
+  width: 200px;
+  height: 50px;
 }
 
 // custom scrollbar

@@ -8,6 +8,9 @@
 
   .currency {
     flex: 0 0 20vw;
+    @media (max-width: 768px) {
+      flex: 0 0 30vw;
+    }
   }
 
   .currency-footer {
