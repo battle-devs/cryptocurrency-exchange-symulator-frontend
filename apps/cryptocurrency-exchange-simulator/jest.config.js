@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'cryptocurrency-exchange-symulator',
+  displayName: 'cryptocurrency-exchange-simulator',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/apps/cryptocurrency-exchange-symulator',
+  coverageDirectory: '../../coverage/apps/cryptocurrency-exchange-simulator',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

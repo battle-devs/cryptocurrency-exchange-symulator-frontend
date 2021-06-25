@@ -1,0 +1,26 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme.scss';
+
+.cryptocurrency-block {
+  height: 16vh;
+  margin: 3vh;
+  background-color: $black-dark;
+  border-radius: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  min-width: 30vw;
+  max-height: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .price {
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 688px) {
+  .cryptocurrency-block {
+    min-width: 16vw;
+  }
+}
