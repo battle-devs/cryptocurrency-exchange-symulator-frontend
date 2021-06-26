@@ -64,7 +64,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('cryptocurrency-exchange-simulator');
   });
 
-  it('should render title', () => {
+  it('should render menu', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
