@@ -1,0 +1,41 @@
+<div class="page-container">
+  <header>
+    <div>
+      <button mat-button class="menu-button" (click)="sidenav.toggle()">
+        <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </header>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #sidenav
+      autoFocus="false"
+      mode="over"
+      [(opened)]="isMenuOpen"
+      class="sidenav"
+      (click)="onSidenavClick()"
+    >
+      <a mat-button routerLink="/home">{{ 'Home' | translate }}</a>
+      <span class="form-inline" (click)="$event.stopPropagation()">
+        <select
+          class="form-control"
+          #selectedLang
+          (change)="switchLang(selectedLang.value)"
+        >
+          <option
+            *ngFor="let language of translate.getLangs()"
+            [value]="language"
+            [selected]="language === translate.currentLang"
+          >
+            {{ language }}
+          </option>
+        </select>
+      </span>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

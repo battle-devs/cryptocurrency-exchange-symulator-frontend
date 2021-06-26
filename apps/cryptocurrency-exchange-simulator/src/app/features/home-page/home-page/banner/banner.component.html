@@ -1,11 +1,17 @@
 <div class="banner-component">
   <div class="banner-title">
-    <p class="title">Ucz się jak inwestować</p>
-    <p class="title">i podwajać swoje oszczędności</p>
+    <p class="title">{{ 'Learn how to invest' | translate }}</p>
+    <p class="title">{{ 'and double your savings' | translate }}</p>
   </div>
   <div class="register">
-    <button mat-button mat-raised-button color="accent" class="large-btn">
-      Zarejestruj się
+    <button
+      mat-button
+      mat-raised-button
+      color="accent"
+      class="large-btn sign-up-button"
+      (click)="register()"
+    >
+      {{ 'Sign up' | translate }}
     </button>
   </div>
 </div>

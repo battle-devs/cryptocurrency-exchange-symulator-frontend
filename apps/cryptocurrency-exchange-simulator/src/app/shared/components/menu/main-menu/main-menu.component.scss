@@ -1,0 +1,59 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
+.page-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  header {
+    color: #fff;
+    padding: 15px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    background-color: $black-very-dark;
+    .menu-button {
+      margin-right: 24px;
+      min-width: 0;
+      padding: 0;
+      line-height: normal;
+    }
+  }
+}
+
+mat-sidenav {
+  background-color: $black-dark;
+  color: $white-light;
+  font-family: $font-family-text;
+}
+
+.sidenav-container {
+  flex: 1;
+  .sidenav {
+    min-width: 240px;
+    a {
+      display: block;
+      padding: 6px 24px;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+main {
+  background-color: $black-light;
+  height: 100%;
+}
+
+select {
+  width: 90%;
+  margin: 5%;
+  height: 40px;
+  color: $white-light;
+  background-color: $black-dark;
+  border: $black-dark;
+}

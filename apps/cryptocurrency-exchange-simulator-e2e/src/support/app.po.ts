@@ -1,1 +1,2 @@
-export const getGreeting = () => cy.get('h1');
+export const getMenu = () => cy.get('.title');
+export const getSignUpButton = () => cy.get('.sign-up-button');

@@ -5,6 +5,7 @@ import { CurrencyListComponent } from './home-page/currency-list/currency-list.c
 import { CurrencyComponent } from './home-page/currency-list/currency/currency.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -20,6 +21,6 @@ const routes: Routes = [
     CurrencyListComponent,
     CurrencyComponent,
   ],
-  imports: [SharedModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, RouterModule.forChild(routes), TranslateModule],
 })
 export class HomePageModule {}

@@ -1,13 +1,15 @@
-import { getGreeting } from '../support/app.po';
+import { getMenu, getSignUpButton } from '../support/app.po';
 
 describe('cryptocurrency-exchange-simulator', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
-
+  it('should display title', () => {
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to cryptocurrency-exchange-simulator!');
+    getMenu().contains('Learn how to invest');
+  });
+
+  it('should display sign up button', () => {
+    // Function helper example, see `../support/app.po.ts` file
+    getSignUpButton().should('be.visible');
   });
 });
