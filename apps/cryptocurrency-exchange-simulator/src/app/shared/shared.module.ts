@@ -6,6 +6,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -15,6 +19,10 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatButtonModule,
     RouterModule,
+    TranslateModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   exports: [
     CommonModule,
@@ -23,6 +31,10 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatButtonModule,
     MenuComponent,
+    TranslateModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   declarations: [MainMenuComponent, MenuComponent, MenuComponent],
 })

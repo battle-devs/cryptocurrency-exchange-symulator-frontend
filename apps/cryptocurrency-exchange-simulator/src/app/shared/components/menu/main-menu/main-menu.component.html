@@ -15,7 +15,22 @@
       class="sidenav"
       (click)="onSidenavClick()"
     >
-      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/home">{{ 'Home' | translate }}</a>
+      <span class="form-inline" (click)="$event.stopPropagation()">
+        <select
+          class="form-control"
+          #selectedLang
+          (change)="switchLang(selectedLang.value)"
+        >
+          <option
+            *ngFor="let language of translate.getLangs()"
+            [value]="language"
+            [selected]="language === translate.currentLang"
+          >
+            {{ language }}
+          </option>
+        </select>
+      </span>
     </mat-sidenav>
     <mat-sidenav-content>
       <main>
