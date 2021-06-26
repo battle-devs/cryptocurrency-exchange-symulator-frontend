@@ -25,6 +25,13 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home',
   },
+  {
+    path: 'authorization',
+    loadChildren: () =>
+      import('./features/authorization/authorization.module').then(
+        (m) => m.AuthorizationModule
+      ),
+  },
 ];
 
 @NgModule({

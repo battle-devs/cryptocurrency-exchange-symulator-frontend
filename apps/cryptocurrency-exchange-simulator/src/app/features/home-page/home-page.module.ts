@@ -5,12 +5,12 @@ import { CurrencyListComponent } from './home-page/currency-list/currency-list.c
 import { CurrencyComponent } from './home-page/currency-list/currency/currency.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
-import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
+    pathMatch: 'full',
   },
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     CurrencyListComponent,
     CurrencyComponent,
   ],
-  imports: [SharedModule, RouterModule.forChild(routes), TranslateModule],
+  imports: [SharedModule, RouterModule.forChild(routes)],
 })
 export class HomePageModule {}
