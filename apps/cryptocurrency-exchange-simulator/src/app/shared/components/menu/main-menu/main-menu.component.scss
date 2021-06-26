@@ -48,3 +48,12 @@ main {
   background-color: $black-light;
   height: 100%;
 }
+
+select {
+  width: 90%;
+  margin: 5%;
+  height: 40px;
+  color: $white-light;
+  background-color: $black-dark;
+  border: $black-dark;
+}
