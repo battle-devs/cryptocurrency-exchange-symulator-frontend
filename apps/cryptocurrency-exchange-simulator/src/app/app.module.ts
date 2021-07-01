@@ -34,6 +34,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'ranking',
+    loadChildren: () =>
+      import('./features/ranking/ranking.module').then((m) => m.RankingModule),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
