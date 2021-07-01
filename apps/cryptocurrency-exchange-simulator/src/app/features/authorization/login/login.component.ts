@@ -6,6 +6,7 @@ import { FormGroupConfig } from '../../../core/services/form-group-config.type';
 import { LoginForm } from '../models/login';
 import { takeWhile } from 'rxjs/operators';
 import { ProgressBarService } from '../../../core/services/progress-bar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'inzynieria-oprogramowania-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     private readonly _fb: FormBuilder,
     private readonly _authorizationService: AuthorizationService,
     private readonly _snackBar: MatSnackBar,
-    private readonly _progressBarService: ProgressBarService
+    private readonly _progressBarService: ProgressBarService,
+    private readonly _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -42,9 +44,15 @@ export class LoginComponent implements OnInit, OnDestroy {
       this._authorizationService
         .login(this.loginForm?.value)
         .pipe(takeWhile(() => this._alive))
-        .subscribe(() => {
-          this._progressBarService.hide();
-        });
+        .subscribe(
+          () => {
+            this._progressBarService.hide();
+            this._router.navigateByUrl('/home');
+          },
+          () => {
+            this._progressBarService.hide();
+          }
+        );
     } else {
       this.loginForm.markAllAsTouched();
     }
