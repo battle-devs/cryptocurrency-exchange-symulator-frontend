@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -25,6 +27,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSelectModule,
     MatInputModule,
     MatProgressBarModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   exports: [
     CommonModule,
@@ -38,6 +42,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSelectModule,
     MatInputModule,
     MatProgressBarModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   declarations: [MainMenuComponent, MenuComponent, MenuComponent],
 })

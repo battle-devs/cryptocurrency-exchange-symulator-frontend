@@ -3,5 +3,20 @@
   "and double your savings": "and double your savings",
   "Sign up": "Sign up",
   "Quotes from": "Quotes from",
-  "Home": "Home"
+  "Home": "Home",
+  "First Name": "First Name",
+  "First name is required": "First name is required",
+  "The maximum length is 255": "The maximum length is 255",
+  "The minimum length is 3": "The minimum length is 3",
+  "Last Name": "Last Name",
+  "Last name is required": "Last name is required",
+  "User Name": "User Name",
+  "User name is required": "User name is required",
+  "Email": "Email",
+  "Email is required": "Email is required",
+  "Email is invalid": "Email is invalid",
+  "Password": "Password",
+  "Password is required": "Password is required",
+  "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters": "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+
 }

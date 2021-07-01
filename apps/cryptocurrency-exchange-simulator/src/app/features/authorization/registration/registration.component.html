@@ -1,0 +1,108 @@
+<div class="registration-wrapper">
+  <div class="registration-component">
+    <p class="title">{{ 'Sign up' | translate }}</p>
+    <form [formGroup]="registrationForm">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'First Name' | translate }}</mat-label>
+        <input matInput formControlName="firstName" />
+        <mat-error
+          *ngIf="registrationForm?.get('firstName')?.hasError('required')"
+          >{{ 'First name is required' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('firstName')?.hasError('maxlength')"
+          >{{ 'The maximum length is 255' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('firstName')?.hasError('minlength')"
+          >{{ 'The minimum length is 3' | translate }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'Last Name' | translate }}</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error
+          *ngIf="registrationForm?.get('lastName')?.hasError('required')"
+          >{{ 'Last name is required' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('lastName')?.hasError('maxlength')"
+          >{{ 'The maximum length is 255' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('lastName')?.hasError('minlength')"
+          >{{ 'The minimum length is 3' | translate }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'User Name' | translate }}</mat-label>
+        <input matInput formControlName="userName" />
+        <mat-error
+          *ngIf="registrationForm?.get('userName')?.hasError('required')"
+          >{{ 'User name is required' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('userName')?.hasError('maxlength')"
+          >{{ 'The maximum length is 255' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('userName')?.hasError('minlength')"
+          >{{ 'The minimum length is 3' | translate }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'Email' | translate }}</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error
+          *ngIf="registrationForm?.get('email')?.hasError('required')"
+          >{{ 'Email is required' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('email')?.hasError('maxlength')"
+          >{{ 'The maximum length is 255' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('email')?.hasError('minlength')"
+          >{{ 'The minimum length is 3' | translate }}</mat-error
+        >
+        <mat-error *ngIf="registrationForm?.get('email')?.hasError('email')">{{
+          'Email is invalid' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'Password' | translate }}</mat-label>
+        <input matInput formControlName="password" />
+        <mat-error
+          *ngIf="registrationForm?.get('password')?.hasError('required')"
+          >{{ 'Password is required' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('password')?.hasError('maxlength')"
+          >{{ 'The maximum length is 255' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('password')?.hasError('minlength')"
+          >{{ 'The minimum length is 3' | translate }}</mat-error
+        >
+        <mat-error
+          *ngIf="registrationForm?.get('password')?.hasError('pattern')"
+          >{{
+            'Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters'
+              | translate
+          }}</mat-error
+        >
+      </mat-form-field>
+      <div class="footer">
+        <button
+          mat-button
+          mat-raised-button
+          color="primary"
+          class="large-btn sign-up-button"
+          (click)="register()"
+        >
+          {{ 'Sign up' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -22,6 +22,13 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'authorization',
+    loadChildren: () =>
+      import('./features/authorization/authorization.module').then(
+        (m) => m.AuthorizationModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
