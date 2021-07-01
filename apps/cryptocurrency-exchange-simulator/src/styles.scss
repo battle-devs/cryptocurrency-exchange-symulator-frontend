@@ -54,8 +54,8 @@ $yellow-palette: (
   ),
 );
 
-$cryptocurrency-exchange-simulator-primary: mat-palette($purple-palette);
-$cryptocurrency-exchange-simulator-accent: mat-palette($yellow-palette);
+$cryptocurrency-exchange-simulator-primary: mat-palette($yellow-palette);
+$cryptocurrency-exchange-simulator-accent: mat-palette($purple-palette);
 $cryptocurrency-exchange-simulator-warn: mat-palette($mat-red);
 
 $cryptocurrency-exchange-simulator-theme: mat-light-theme(
@@ -120,4 +120,30 @@ mat-sidenav-content::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $black-dark;
+}
+
+// inputs
+.mat-form-field-empty.mat-form-field-label {
+  color: $white-light;
+}
+
+.mat-form-field-flex {
+  border-bottom: 2px solid $white-light;
+}
+.mat-form-field {
+  &:not(.mat-focused):not(.mat-form-field-invalid) {
+    .mat-form-field-flex:hover + .mat-form-field-underline {
+      .mat-form-field-ripple {
+        background-color: $white-light;
+      }
+    }
+  }
+}
+
+.mat-form-field-label {
+  color: $white-light;
+}
+
+input {
+  color: $white-light !important;
 }
