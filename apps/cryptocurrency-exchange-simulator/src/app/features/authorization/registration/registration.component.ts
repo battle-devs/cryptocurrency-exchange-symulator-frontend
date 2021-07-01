@@ -1,17 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegistrationForm } from '../models/registration';
 import { FormGroupConfig } from '../../../core/services/form-group-config.type';
+import { AuthorizationService } from '../../../core/services/api/authorization.service';
+import { takeWhile } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'inzynieria-oprogramowania-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent implements OnInit, OnDestroy {
   public registrationForm: FormGroup;
+  private _alive = true;
 
-  constructor(private readonly _fb: FormBuilder) {}
+  constructor(
+    private readonly _fb: FormBuilder,
+    private readonly _authorizationService: AuthorizationService,
+    private readonly _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this._createForm();
@@ -67,5 +75,28 @@ export class RegistrationComponent implements OnInit {
     this.registrationForm = this._fb.group(config);
   };
 
-  public register() {}
+  public register() {
+    if (this.registrationForm.valid) {
+      const data: RegistrationForm = {
+        email: this.registrationForm?.get('email')?.value,
+        firstName: this.registrationForm?.get('firstName')?.value,
+        lastName: this.registrationForm?.get('lastName')?.value,
+        password: this.registrationForm?.get('password')?.value,
+        userName: this.registrationForm?.get('userName')?.value,
+        user_password: this.registrationForm?.get('password')?.value,
+      };
+      this._authorizationService
+        .register(data)
+        .pipe(takeWhile(() => this._alive))
+        .subscribe(() => {
+          this._snackBar.open('User created correctly!', 'Success');
+        });
+    } else {
+      this.registrationForm.markAllAsTouched();
+    }
+  }
+
+  public ngOnDestroy() {
+    this._alive = false;
+  }
 }
