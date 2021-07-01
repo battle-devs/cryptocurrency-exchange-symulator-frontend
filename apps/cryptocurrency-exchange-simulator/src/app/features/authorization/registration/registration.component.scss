@@ -1,0 +1,14 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+.registration-wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  .registration-component {
+    background-color: $black-dark;
+    width: 50%;
+    height: 85%;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  }
+}
