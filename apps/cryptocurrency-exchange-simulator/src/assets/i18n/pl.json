@@ -17,5 +17,6 @@
   "Email is invalid": "Email jest nieprawidłowy",
   "Password": "Hasło",
   "Password is required": "Hasło jest wymagane",
-  "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters": "Musi zawierać co najmniej 8 znaków, w tym co najmniej jedną małą literę, jedną dużą literę i cyfrę"
+  "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters": "Musi zawierać co najmniej 8 znaków, w tym co najmniej jedną małą literę, jedną dużą literę i cyfrę",
+  "Sign in": "Zaloguj się"
 }
