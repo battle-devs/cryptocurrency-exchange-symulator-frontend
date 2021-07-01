@@ -15,13 +15,20 @@
       class="sidenav"
       (click)="onSidenavClick()"
     >
-      <a mat-button routerLink="/home">{{ 'Home' | translate }}</a>
-      <a mat-button routerLink="/authorization/registration">{{
-        'Sign up' | translate
-      }}</a>
-      <a mat-button routerLink="/authorization/login">{{
-        'Sign in' | translate
+      <div class="main-tabs">
+        <a mat-button routerLink="/home">{{ 'Home' | translate }}</a>
+        <a mat-button routerLink="">{{ 'Current quotes' | translate }}</a>
+        <a mat-button routerLink="">{{ 'Ranking' | translate }}</a>
+        <a mat-button routerLink="">{{ 'Wallet management' | translate }}</a>
+      </div>
+      <div class="authorization-tabs">
+        <a mat-button routerLink="/authorization/registration">{{
+          'Sign up' | translate
         }}</a>
+        <a mat-button routerLink="/authorization/login">{{
+          'Sign in' | translate
+        }}</a>
+      </div>
       <span class="form-inline" (click)="$event.stopPropagation()">
         <select
           class="form-control"
