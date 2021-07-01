@@ -3,5 +3,19 @@
   "and double your savings": "i podwajać swoje oszczędności",
   "Sign up": "Zarejestruj się",
   "Quotes from": "Notowania z",
-  "Home": "Strona Główna"
+  "Home": "Strona Główna",
+  "First Name": "Imię",
+  "First name is required": "Imię jest wymagane",
+  "The maximum length is 255": "Maksymalna ilość znaków to 255",
+  "The minimum length is 3": "Minimalna ilość znaków to 3",
+  "Last Name": "Nazwisko",
+  "Last name is required": "Nazwisko jest wymagane",
+  "User Name": "Nazwa użytkownika",
+  "User name is required": "Nazwa użytkownika jest wymagana",
+  "Email": "Email",
+  "Email is required": "Email jest wymagany",
+  "Email is invalid": "Email jest nieprawidłowy",
+  "Password": "Hasło",
+  "Password is required": "Hasło jest wymagane",
+  "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters": "Musi zawierać co najmniej 8 znaków, w tym co najmniej jedną małą literę, jedną dużą literę i cyfrę"
 }
