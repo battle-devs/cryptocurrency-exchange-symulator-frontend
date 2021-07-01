@@ -1,0 +1,29 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme.scss';
+
+.ranking-component {
+  height: calc(100% - 80px);
+  width: calc(100% - 80px);
+  padding: 40px;
+  .title-block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 55px;
+    .title {
+      line-height: 35px;
+    }
+  }
+  .table-block {
+    table {
+      width: 100%;
+      background-color: $black-dark;
+      font-family: $font-family-text;
+      th {
+        color: $yellow;
+        border-bottom: 3px solid $yellow-opacity;
+      }
+      td {
+        color: $white-light;
+      }
+    }
+  }
+}
