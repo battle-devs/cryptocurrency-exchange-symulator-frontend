@@ -18,5 +18,6 @@
   "Password": "Password",
   "Password is required": "Password is required",
   "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters": "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters",
-  "Sign in": "Sign in"
+  "Sign in": "Sign in",
+  "Confirm": "Confirm"
 }

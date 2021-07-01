@@ -7,6 +7,11 @@ export interface RegistrationForm {
   user_password?: string;
 }
 
+export interface LoginForm {
+  userName: string;
+  password: string;
+}
+
 export interface RegisterUserResponse {
   id: number;
   user_password: string;

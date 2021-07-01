@@ -5,6 +5,7 @@ import { FormGroupConfig } from '../../../core/services/form-group-config.type';
 import { AuthorizationService } from '../../../core/services/api/authorization.service';
 import { takeWhile } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ProgressBarService } from '../../../core/services/progress-bar.service';
 
 @Component({
   selector: 'inzynieria-oprogramowania-registration',
@@ -18,7 +19,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   constructor(
     private readonly _fb: FormBuilder,
     private readonly _authorizationService: AuthorizationService,
-    private readonly _snackBar: MatSnackBar
+    private readonly _snackBar: MatSnackBar,
+    private readonly _progressBarService: ProgressBarService
   ) {}
 
   ngOnInit(): void {
@@ -76,6 +78,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   };
 
   public register() {
+    this._progressBarService.show();
     if (this.registrationForm.valid) {
       const data: RegistrationForm = {
         email: this.registrationForm?.get('email')?.value,
@@ -90,6 +93,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         .pipe(takeWhile(() => this._alive))
         .subscribe(() => {
           this._snackBar.open('User created correctly!', 'Success');
+          this._progressBarService.hide();
         });
     } else {
       this.registrationForm.markAllAsTouched();
