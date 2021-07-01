@@ -78,8 +78,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   };
 
   public register() {
-    this._progressBarService.show();
     if (this.registrationForm.valid) {
+      this._progressBarService.show();
       const data: RegistrationForm = {
         email: this.registrationForm?.get('email')?.value,
         firstName: this.registrationForm?.get('firstName')?.value,

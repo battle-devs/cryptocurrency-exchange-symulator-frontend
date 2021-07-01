@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthorizationService } from '../../../core/services/api/authorization.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroupConfig } from '../../../core/services/form-group-config.type';
-import { LoginForm, RegistrationForm } from '../models/registration';
+import { LoginForm } from '../models/login';
 import { takeWhile } from 'rxjs/operators';
+import { ProgressBarService } from '../../../core/services/progress-bar.service';
 
 @Component({
   selector: 'inzynieria-oprogramowania-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private readonly _fb: FormBuilder,
     private readonly _authorizationService: AuthorizationService,
-    private readonly _snackBar: MatSnackBar
+    private readonly _snackBar: MatSnackBar,
+    private readonly _progressBarService: ProgressBarService
   ) {}
 
   ngOnInit(): void {
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private _createForm = () => {
     const config: FormGroupConfig<LoginForm> = {
-      userName: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required]],
     };
 
@@ -36,11 +38,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   public login() {
     if (this.loginForm.valid) {
+      this._progressBarService.show();
       this._authorizationService
-        .register(this.loginForm?.value)
+        .login(this.loginForm?.value)
         .pipe(takeWhile(() => this._alive))
         .subscribe(() => {
-          console.log();
+          this._progressBarService.hide();
         });
     } else {
       this.loginForm.markAllAsTouched();
