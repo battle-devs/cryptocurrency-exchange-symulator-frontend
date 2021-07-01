@@ -71,7 +71,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>{{ 'Password' | translate }}</mat-label>
-        <input matInput formControlName="password" />
+        <input matInput formControlName="password" type="password" />
         <mat-error
           *ngIf="registrationForm?.get('password')?.hasError('required')"
           >{{ 'Password is required' | translate }}</mat-error
@@ -100,7 +100,7 @@
           class="large-btn sign-up-button"
           (click)="register()"
         >
-          {{ 'Sign up' | translate }}
+          {{ 'Confirm' | translate }}
         </button>
       </div>
     </form>

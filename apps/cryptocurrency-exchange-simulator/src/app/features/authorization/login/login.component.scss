@@ -1,0 +1,30 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+.login-wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  .login-component {
+    background-color: $black-dark;
+    width: 50%;
+    height: 50%;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    color: $white-light;
+    .title {
+      font-family: $font-family-title;
+      size: $font-size-title;
+      margin: 40px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 25px 65px 20px;
+      .footer {
+        margin-top: 35px;
+        align-self: center;
+      }
+    }
+  }
+}

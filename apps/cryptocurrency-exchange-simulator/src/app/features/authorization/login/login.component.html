@@ -1,0 +1,32 @@
+<div class="login-wrapper">
+  <div class="login-component">
+    <p class="title">{{ 'Sign in' | translate }}</p>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'User Name' | translate }}</mat-label>
+        <input matInput formControlName="username" />
+        <mat-error *ngIf="loginForm?.get('username')?.hasError('required')">{{
+          'User name is required' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'Password' | translate }}</mat-label>
+        <input matInput formControlName="password" type="password" />
+        <mat-error *ngIf="loginForm?.get('password')?.hasError('required')">{{
+          'Password is required' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <div class="footer">
+        <button
+          mat-button
+          mat-raised-button
+          color="primary"
+          class="large-btn sign-up-button"
+          (click)="login()"
+        >
+          {{ 'Confirm' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
