@@ -6,6 +6,7 @@ import { AuthorizationService } from '../../../core/services/api/authorization.s
 import { takeWhile } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProgressBarService } from '../../../core/services/progress-bar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'inzynieria-oprogramowania-registration',
@@ -20,7 +21,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     private readonly _fb: FormBuilder,
     private readonly _authorizationService: AuthorizationService,
     private readonly _snackBar: MatSnackBar,
-    private readonly _progressBarService: ProgressBarService
+    private readonly _progressBarService: ProgressBarService,
+    private readonly _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -94,6 +96,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         .subscribe(() => {
           this._snackBar.open('User created correctly!', 'Success');
           this._progressBarService.hide();
+          this._router.navigateByUrl('/authorization/login');
         });
     } else {
       this.registrationForm.markAllAsTouched();
