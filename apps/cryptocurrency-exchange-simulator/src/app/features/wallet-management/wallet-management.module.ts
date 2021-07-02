@@ -9,13 +9,13 @@ import { CheckingAccountBalanceComponent } from './wallet-management/checking-ac
 import { CheckingCryptocurrenciesBalanceComponent } from './wallet-management/checking-cryptocurrencies-balance/checking-cryptocurrencies-balance.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChangeCurrencyComponent,
+    component: WalletManagementComponent,
     pathMatch: 'full',
-    redirectTo: 'change-currency',
   },
   {
     path: 'change-currency',
@@ -53,6 +53,11 @@ const routes: Routes = [
     CheckingAccountBalanceComponent,
     CheckingCryptocurrenciesBalanceComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    MatTabsModule,
+  ],
 })
 export class WalletManagementModule {}
