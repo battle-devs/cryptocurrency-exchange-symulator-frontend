@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { CurrenciesService } from '../../../core/services/api/currencies.service';
+import { catchError, map, tap } from 'rxjs/operators';
+import { ProgressBarService } from '../../../core/services/progress-bar.service';
+import { EMPTY } from 'rxjs';
 
 export interface TableData {
   position: number;
@@ -23,6 +27,27 @@ const ELEMENT_DATA: TableData[] = [
   styleUrls: ['./ranking.component.scss'],
 })
 export class RankingComponent {
+  constructor(
+    private readonly _currenciesService: CurrenciesService,
+    private readonly _progressBarService: ProgressBarService
+  ) {
+    _progressBarService.show();
+  }
   displayedColumns: string[] = ['position', 'name', 'value'];
-  dataSource = ELEMENT_DATA;
+  dataSource = this._currenciesService.getCurrenciesList().pipe(
+    tap(() => this._progressBarService.hide()),
+    catchError(() => {
+      this._progressBarService.hide();
+      return EMPTY;
+    }),
+    map((data) =>
+      Object.keys(data)
+        .reverse()
+        .map((key, index) => ({
+          position: index + 1,
+          name: key,
+          value: data[key],
+        }))
+    )
+  );
 }
