@@ -8,6 +8,7 @@ import {
   RealtimeChartModule,
   PieChartModule,
 } from 'ngx-graph';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     LineChartModule,
     RealtimeChartModule,
     PieChartModule,
+    FormsModule,
   ],
 })
 export class CurrentQuotesModule {}
