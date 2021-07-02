@@ -3,6 +3,8 @@ import { ProfileService } from '../../../../core/services/api/profile.service';
 import { takeWhile } from 'rxjs/operators';
 import { Asset, GetUserResponse } from '../../../profile/models/profile';
 import { ProgressBarService } from '../../../../core/services/progress-bar.service';
+import { WalletManagementService } from '../../../../core/services/api/wallet-management.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'inzynieria-oprogramowania-change-currency',
@@ -15,7 +17,9 @@ export class ChangeCurrencyComponent implements OnInit, OnDestroy {
   private _alive = true;
   constructor(
     private readonly _profileService: ProfileService,
-    private readonly _progressBarService: ProgressBarService
+    private readonly _progressBarService: ProgressBarService,
+    private readonly _walletManagementService: WalletManagementService,
+    private readonly _snackBar: MatSnackBar
   ) {
     this._progressBarService.show();
   }
@@ -49,7 +53,29 @@ export class ChangeCurrencyComponent implements OnInit, OnDestroy {
       });
   }
 
-  public changeCurrency() {}
+  public changeCurrency() {
+    const username = sessionStorage.getItem('userName');
+
+    if (this.currency === 'PLN') {
+      this._walletManagementService
+        .plnToUsd({ userName: username })
+        .pipe(takeWhile(() => this._alive))
+        .subscribe(() => {
+          this._snackBar.open('Currency changed!', 'Success', {
+            duration: 5000,
+          });
+        });
+    } else if (this.currency === 'USD') {
+      this._walletManagementService
+        .usdToPln({ userName: username })
+        .pipe(takeWhile(() => this._alive))
+        .subscribe(() => {
+          this._snackBar.open('Currency changed!', 'Success', {
+            duration: 5000,
+          });
+        });
+    }
+  }
 
   ngOnDestroy(): void {
     this._alive = false;

@@ -21,4 +21,28 @@ export class WalletManagementService {
         })
       );
   }
+
+  public plnToUsd(data: any) {
+    return this._http
+      .put<any>('http://localhost:8080/plnToUsd/' + data.userName, '', {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      })
+      .pipe(
+        catchError((err) => {
+          return throwError(err);
+        })
+      );
+  }
+
+  public usdToPln(data: any) {
+    return this._http
+      .put<any>('http://localhost:8080/usdToPln/' + data.userName, '', {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      })
+      .pipe(
+        catchError((err) => {
+          return throwError(err);
+        })
+      );
+  }
 }
