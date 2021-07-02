@@ -17,6 +17,4 @@ export class WalletManagementComponent {
       url: 'checking-cryptocurrencies-balance',
     },
   ];
-
-  public activeLink = this.links[0];
 }

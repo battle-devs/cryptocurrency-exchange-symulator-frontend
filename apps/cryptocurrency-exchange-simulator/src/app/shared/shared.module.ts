@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatProgressBarModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatListModule,
   ],
   exports: [
     CommonModule,
@@ -44,6 +46,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatProgressBarModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatListModule,
   ],
   declarations: [MainMenuComponent, MenuComponent, MenuComponent],
 })

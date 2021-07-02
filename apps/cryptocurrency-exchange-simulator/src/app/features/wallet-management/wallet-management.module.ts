@@ -15,31 +15,32 @@ const routes: Routes = [
   {
     path: '',
     component: WalletManagementComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: 'change-currency',
-    component: ChangeCurrencyComponent,
-  },
-  {
-    path: 'account-balance-reset',
-    component: AccountBalanceResetComponent,
-  },
-  {
-    path: 'buying-cryptocurrencies',
-    component: BuyingCryptocurrenciesComponent,
-  },
-  {
-    path: 'selling-cryptocurrencies',
-    component: SellingCryptocurrenciesComponent,
-  },
-  {
-    path: 'checking-account-balance',
-    component: CheckingAccountBalanceComponent,
-  },
-  {
-    path: 'checking-cryptocurrencies-balance',
-    component: CheckingCryptocurrenciesBalanceComponent,
+    children: [
+      {
+        path: 'change-currency',
+        component: ChangeCurrencyComponent,
+      },
+      {
+        path: 'account-balance-reset',
+        component: AccountBalanceResetComponent,
+      },
+      {
+        path: 'buying-cryptocurrencies',
+        component: BuyingCryptocurrenciesComponent,
+      },
+      {
+        path: 'selling-cryptocurrencies',
+        component: SellingCryptocurrenciesComponent,
+      },
+      {
+        path: 'checking-account-balance',
+        component: CheckingAccountBalanceComponent,
+      },
+      {
+        path: 'checking-cryptocurrencies-balance',
+        component: CheckingCryptocurrenciesBalanceComponent,
+      },
+    ],
   },
 ];
 

@@ -27,5 +27,11 @@
   "No.": "Pozycja",
   "Name": "Nazwa",
   "Value": "Wartość",
-  "Join us": "Dołącz do nas"
+  "Join us": "Dołącz do nas",
+  "Change currency": "Zmień walutę",
+  "Reset account balance": "Zresetuj stan konta",
+  "Buy cryptocurrencies": "Kup kryptowaluty",
+  "Sell cryptocurrencies": "Sprzedaj kryptowaluty",
+  "Check account balance": "Sprawdź stan konta",
+  "Check cryptocurrencies balance": "Sprawdź stan kryptowalut"
 }

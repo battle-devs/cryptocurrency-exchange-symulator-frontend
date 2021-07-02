@@ -27,5 +27,11 @@
   "No.": "No.",
   "Name": "Name",
   "Value": "Value",
-  "Join us": "Join us"
+  "Join us": "Join us",
+  "Change currency": "Change currency",
+  "Reset account balance": "Reset account balance",
+  "Buy cryptocurrencies": "Buy cryptocurrencies",
+  "Sell cryptocurrencies": "Sell cryptocurrencies",
+  "Check account balance": "Check account balance",
+  "Check cryptocurrencies balance": "Check cryptocurrencies balance"
 }
