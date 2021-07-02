@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { CurrentQuotesComponent } from './current-quotes/current-quotes.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
+import {
+  LineChartModule,
+  RealtimeChartModule,
+  PieChartModule,
+} from 'ngx-graph';
 
 const routes: Routes = [
   {
@@ -14,6 +19,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [CurrentQuotesComponent],
-  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(routes),
+    LineChartModule,
+    RealtimeChartModule,
+    PieChartModule,
+  ],
 })
 export class CurrentQuotesModule {}

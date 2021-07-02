@@ -16,4 +16,12 @@ export class CurrenciesService {
       })
     );
   }
+
+  public getCurrency() {
+    return this._http.get<any>('http://localhost:8080/getPrice/btcpln').pipe(
+      catchError((err) => {
+        return throwError(err);
+      })
+    );
+  }
 }
