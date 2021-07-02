@@ -126,6 +126,9 @@ mat-sidenav-content::-webkit-scrollbar-thumb {
 .mat-form-field-empty.mat-form-field-label {
   color: $white-light;
 }
+mat-option.mat-active {
+  color: $black-dark !important;
+}
 
 .mat-form-field-flex {
   border-bottom: 2px solid $white-light;
@@ -139,9 +142,10 @@ mat-sidenav-content::-webkit-scrollbar-thumb {
     }
   }
 }
-
+.mat-select-arrow,
+.mat-select-value-text,
 .mat-form-field-label {
-  color: $white-light;
+  color: $white-light !important;
 }
 
 input {
@@ -160,4 +164,7 @@ input {
 
 mat-icon {
   color: $white-light;
+}
+.mat-drawer-content {
+  height: 110vh !important;
 }

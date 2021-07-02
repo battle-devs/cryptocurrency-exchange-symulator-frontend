@@ -1,0 +1,19 @@
+<mat-form-field>
+  <mat-label>Currency</mat-label>
+  <mat-select
+    [ngModel]="selectedCurrencySubject | async"
+    (ngModelChange)="selectedCurrencySubject.next($event)"
+  >
+    <mat-option
+      *ngFor="let currency of availableCurrencies"
+      [value]="currency.value"
+    >
+      {{ currency.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<ngx-realtime-chart
+  [options]="realtimeChartOptions"
+  [data]="[(data$ | async) || []]"
+></ngx-realtime-chart>
