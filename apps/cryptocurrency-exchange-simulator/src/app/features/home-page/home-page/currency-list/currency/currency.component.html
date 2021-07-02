@@ -1,4 +1,4 @@
 <div class="cryptocurrency-block mat-elevation-z3">
   <p>{{ cryptocurrency?.key }}</p>
-  <p class="price">{{ 'USD' }} {{ cryptocurrency?.value }}</p>
+  <p class="price">{{ cryptocurrency?.value | currency: 'PLN ' }}</p>
 </div>
