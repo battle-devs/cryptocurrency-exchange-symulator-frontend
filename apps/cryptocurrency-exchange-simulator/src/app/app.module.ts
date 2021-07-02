@@ -46,6 +46,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'current-quotes',
+    loadChildren: () =>
+      import('./features/current-quotes/current-quotes.module').then(
+        (m) => m.CurrentQuotesModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
