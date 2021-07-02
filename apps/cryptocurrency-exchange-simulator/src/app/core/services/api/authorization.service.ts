@@ -17,7 +17,10 @@ import {
 export class AuthorizationService {
   constructor(private readonly _http: HttpClient) {}
 
-  private readonly tokenSubject = new BehaviorSubject<string>(null);
+  private readonly tokenSubject = new BehaviorSubject<string>(
+    localStorage.getItem('access_token')
+  );
+
   public token$ = this.tokenSubject.asObservable();
 
   public getToken() {
@@ -39,6 +42,7 @@ export class AuthorizationService {
       .pipe(
         tap((res) => {
           this.tokenSubject.next(res.token);
+          localStorage.setItem('access_token', res.token);
         }),
         catchError((err) => {
           return throwError(err);

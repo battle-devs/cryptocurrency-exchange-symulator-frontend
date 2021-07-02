@@ -147,3 +147,17 @@ mat-sidenav-content::-webkit-scrollbar-thumb {
 input {
   color: $white-light !important;
 }
+
+// mat tabs
+
+.mat-tab-header-pagination-chevron {
+  border-color: $white-light;
+}
+
+.mat-tab-link {
+  color: $white-light;
+}
+
+mat-icon {
+  color: $white-light;
+}

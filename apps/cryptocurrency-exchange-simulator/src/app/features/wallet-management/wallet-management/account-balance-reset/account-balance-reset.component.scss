@@ -1,0 +1,14 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
+.account-balance-reset-component {
+  text-align: center;
+  .subtitle {
+    font-family: $font-family-title;
+    font-size: $font-size-subtitle;
+  }
+  .footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}

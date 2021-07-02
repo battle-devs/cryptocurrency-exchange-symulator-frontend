@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthorizationService } from '../../../core/services/api/authorization.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroupConfig } from '../../../core/services/form-group-config.type';
 import { LoginForm } from '../models/login';
 import { takeWhile } from 'rxjs/operators';
@@ -20,7 +19,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private readonly _fb: FormBuilder,
     private readonly _authorizationService: AuthorizationService,
-    private readonly _snackBar: MatSnackBar,
     private readonly _progressBarService: ProgressBarService,
     private readonly _router: Router
   ) {}
@@ -45,7 +43,12 @@ export class LoginComponent implements OnInit, OnDestroy {
         .login(this.loginForm?.value)
         .pipe(takeWhile(() => this._alive))
         .subscribe(
-          () => {
+          (user) => {
+            sessionStorage.setItem(
+              'userName',
+              this.loginForm?.get('username')?.value
+            );
+            sessionStorage.setItem('userId', JSON.stringify(user.id));
             this._progressBarService.hide();
             this._router.navigateByUrl('/home');
           },

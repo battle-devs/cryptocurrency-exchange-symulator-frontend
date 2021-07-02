@@ -1,0 +1,25 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
+.checking-account-balance-component {
+  text-align: center;
+  .title-block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    .subtitle {
+      font-family: $font-family-title;
+      font-size: $font-size-subtitle;
+    }
+    mat-icon {
+      padding-left: 10px;
+    }
+  }
+  .assets-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .asset {
+      margin: 10px;
+    }
+  }
+}

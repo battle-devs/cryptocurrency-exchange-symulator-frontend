@@ -1,0 +1,26 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
+.list-item {
+  color: $white-light;
+}
+
+a[mat-list-item] {
+  &.active {
+    color: yellow;
+  }
+}
+
+.wallet-management-wrapper {
+  display: flex;
+  .menu {
+    width: 25%;
+    mat-nav-list {
+      height: calc(100vh - 62px);
+      background-color: $black-dark;
+    }
+  }
+  .management {
+    width: 75%;
+    padding: 30px;
+  }
+}

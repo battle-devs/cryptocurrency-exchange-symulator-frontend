@@ -94,7 +94,9 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         .register(data)
         .pipe(takeWhile(() => this._alive))
         .subscribe(() => {
-          this._snackBar.open('User created correctly!', 'Success');
+          this._snackBar.open('User created correctly!', 'Success', {
+            duration: 5000,
+          });
           this._progressBarService.hide();
           this._router.navigateByUrl('/authorization/login');
         });

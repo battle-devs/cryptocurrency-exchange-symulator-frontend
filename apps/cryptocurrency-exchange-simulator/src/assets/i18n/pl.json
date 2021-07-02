@@ -26,5 +26,15 @@
   "See what pays off the most!": "Zobacz co się najbardziej opłaca!",
   "No.": "Pozycja",
   "Name": "Nazwa",
-  "Value": "Wartość"
+  "Value": "Wartość",
+  "Join us": "Dołącz do nas",
+  "Change currency": "Zmień walutę",
+  "Reset account balance": "Zresetuj stan konta",
+  "Buy or sell cryptocurrencies": "Kup lub sprzedaj kryptowaluty",
+  "Check account balance": "Sprawdź stan konta",
+  "Check cryptocurrencies balance": "Sprawdź stan kryptowalut",
+  "Confirm to reset your account balance to initial balance": "Potwierdź, aby zresetować stan konta do stanu początkowego",
+  "Do you want to change the currency you use to": "Czy chcesz zmienić używaną przez Ciebie walutę na",
+  "Your current currency": "Twoja obecna waluta",
+  "Account balance": "Stan konta"
 }

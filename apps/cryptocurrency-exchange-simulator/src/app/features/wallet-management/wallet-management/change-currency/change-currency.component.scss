@@ -1,0 +1,14 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
+.change-currency-component {
+  .subtitle {
+    font-family: $font-family-title;
+    font-size: $font-size-subtitle;
+    margin-bottom: 50px;
+  }
+  .footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}

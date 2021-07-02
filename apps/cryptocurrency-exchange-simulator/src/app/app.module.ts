@@ -39,6 +39,13 @@ const routes: Routes = [
       import('./features/ranking/ranking.module').then((m) => m.RankingModule),
   },
   {
+    path: 'wallet-management',
+    loadChildren: () =>
+      import('./features/wallet-management/wallet-management.module').then(
+        (m) => m.WalletManagementModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
