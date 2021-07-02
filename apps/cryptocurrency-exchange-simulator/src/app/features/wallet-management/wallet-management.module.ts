@@ -4,7 +4,6 @@ import { WalletManagementComponent } from './wallet-management/wallet-management
 import { ChangeCurrencyComponent } from './wallet-management/change-currency/change-currency.component';
 import { AccountBalanceResetComponent } from './wallet-management/account-balance-reset/account-balance-reset.component';
 import { BuyingCryptocurrenciesComponent } from './wallet-management/buying-cryptocurrencies/buying-cryptocurrencies.component';
-import { SellingCryptocurrenciesComponent } from './wallet-management/selling-cryptocurrencies/selling-cryptocurrencies.component';
 import { CheckingAccountBalanceComponent } from './wallet-management/checking-account-balance/checking-account-balance.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -29,10 +28,6 @@ const routes: Routes = [
         component: BuyingCryptocurrenciesComponent,
       },
       {
-        path: 'selling-cryptocurrencies',
-        component: SellingCryptocurrenciesComponent,
-      },
-      {
         path: 'checking-account-balance',
         component: CheckingAccountBalanceComponent,
       },
@@ -46,7 +41,6 @@ const routes: Routes = [
     ChangeCurrencyComponent,
     AccountBalanceResetComponent,
     BuyingCryptocurrenciesComponent,
-    SellingCryptocurrenciesComponent,
     CheckingAccountBalanceComponent,
     CurrencyComponent,
   ],
