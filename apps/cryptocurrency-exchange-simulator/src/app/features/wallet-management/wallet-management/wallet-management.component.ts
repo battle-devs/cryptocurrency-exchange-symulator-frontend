@@ -12,9 +12,5 @@ export class WalletManagementComponent {
     { label: 'Buy cryptocurrencies', url: 'buying-cryptocurrencies' },
     { label: 'Sell cryptocurrencies', url: 'selling-cryptocurrencies' },
     { label: 'Check account balance', url: 'checking-account-balance' },
-    {
-      label: 'Check cryptocurrencies balance',
-      url: 'checking-cryptocurrencies-balance',
-    },
   ];
 }
