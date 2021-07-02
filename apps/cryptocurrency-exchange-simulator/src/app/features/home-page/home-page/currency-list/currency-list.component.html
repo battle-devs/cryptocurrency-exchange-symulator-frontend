@@ -1,10 +1,13 @@
 <div class="currency-list">
-  <div class="currency" *ngFor="let crypto of cryptocurrencies">
+  <div
+    class="currency"
+    *ngFor="let crypto of cryptocurrencies$ | async | keyvalue"
+  >
     <inzynieria-oprogramowania-currency
-      [cryptocurrency]="crypto"
+      [cryptocurrency]="{ key: crypto.key, value: crypto.value }"
     ></inzynieria-oprogramowania-currency>
   </div>
   <p class="currency-footer">
-    {{ 'Quotes from' | translate }} 28.05.2021 18:15
+    {{ 'Quotes from' | translate }} {{ now | date: 'dd/MM/yyyy hh:mm a' }}
   </p>
 </div>
