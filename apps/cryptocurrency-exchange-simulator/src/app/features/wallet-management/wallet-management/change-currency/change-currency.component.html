@@ -1,1 +1,18 @@
-<p>change-currency works!</p>
+<div class="change-currency-component">
+  <p class="subtitle">
+    {{ 'Do you want to change the currency you use to' | translate }}
+    {{ currency === 'PLN' ? 'USD' : 'PLN' }}?
+  </p>
+  <p>{{ 'Your current currency' | translate }}: {{ currency }}</p>
+  <div class="footer">
+    <button
+      mat-button
+      mat-raised-button
+      color="primary"
+      class="large-btn sign-up-button"
+      (click)="changeCurrency()"
+    >
+      {{ 'Confirm' | translate }}
+    </button>
+  </div>
+</div>

@@ -22,7 +22,9 @@ export class AccountBalanceResetComponent implements OnDestroy {
       .resetAccountBalance({ userName: username })
       .pipe(takeWhile(() => this._alive))
       .subscribe(() => {
-        this._snackBar.open('Your account balance has been reset!', 'Success');
+        this._snackBar.open('Your account balance has been reset!', 'Success', {
+          duration: 5000,
+        });
       });
   }
 
