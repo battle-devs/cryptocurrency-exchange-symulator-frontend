@@ -1,3 +1,14 @@
 <div class="checking-account-balance-component">
-  <p class="subtitle">{{ 'Account balance' | translate }}</p>
+  <div class="title-block">
+    <p class="subtitle">{{ 'Account balance' | translate }}</p>
+    <mat-icon> account_balance_wallet</mat-icon>
+  </div>
+
+  <div class="assets-list" *ngFor="let currency of currencies">
+    <div class="asset">
+      <inzynieria-oprogramowania-currency
+        [asset]="currency"
+      ></inzynieria-oprogramowania-currency>
+    </div>
+  </div>
 </div>

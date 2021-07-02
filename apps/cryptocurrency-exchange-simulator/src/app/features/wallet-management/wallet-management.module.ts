@@ -9,6 +9,7 @@ import { CheckingAccountBalanceComponent } from './wallet-management/checking-ac
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
+import { CurrencyComponent } from './wallet-management/checking-account-balance/currency/currency.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
     BuyingCryptocurrenciesComponent,
     SellingCryptocurrenciesComponent,
     CheckingAccountBalanceComponent,
+    CurrencyComponent,
   ],
   imports: [
     CommonModule,

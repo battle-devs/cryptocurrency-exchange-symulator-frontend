@@ -10,7 +10,6 @@ import { ProgressBarService } from '../../../../core/services/progress-bar.servi
   styleUrls: ['./change-currency.component.scss'],
 })
 export class ChangeCurrencyComponent implements OnInit, OnDestroy {
-  public user: GetUserResponse;
   public currency: string;
 
   private _alive = true;
@@ -32,7 +31,6 @@ export class ChangeCurrencyComponent implements OnInit, OnDestroy {
       .getUser(userId)
       .pipe(takeWhile(() => this._alive))
       .subscribe((user) => {
-        this.user = user;
         const hasPLN = user?.asset
           ?.map((a: Asset) => a?.currency?.name)
           .includes('PLN');

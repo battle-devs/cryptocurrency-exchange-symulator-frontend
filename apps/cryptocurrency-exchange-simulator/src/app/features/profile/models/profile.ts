@@ -20,7 +20,7 @@ export interface GetUserResponse {
 export interface Asset {
   id: number;
   amount: number;
-  currency?: any;
+  currency?: Currency;
 }
 
 export interface Authority {
