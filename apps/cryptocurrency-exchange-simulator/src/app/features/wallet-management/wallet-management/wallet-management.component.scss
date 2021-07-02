@@ -12,8 +12,15 @@ a[mat-list-item] {
 
 .wallet-management-wrapper {
   display: flex;
-  mat-nav-list {
-    height: calc(100vh - 62px);
-    background-color: $black-dark;
+  .menu {
+    width: 20%;
+    mat-nav-list {
+      height: calc(100vh - 62px);
+      background-color: $black-dark;
+    }
+  }
+  .management {
+    width: 80%;
+    padding: 30px;
   }
 }

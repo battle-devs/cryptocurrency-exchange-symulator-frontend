@@ -46,6 +46,10 @@ export class LoginComponent implements OnInit, OnDestroy {
         .pipe(takeWhile(() => this._alive))
         .subscribe(
           () => {
+            sessionStorage.setItem(
+              'userName',
+              this.loginForm?.get('username')?.value
+            );
             this._progressBarService.hide();
             this._router.navigateByUrl('/home');
           },
