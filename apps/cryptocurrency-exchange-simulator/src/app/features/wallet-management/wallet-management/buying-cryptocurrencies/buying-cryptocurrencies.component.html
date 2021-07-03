@@ -1,0 +1,65 @@
+<div class="buying-cryptocurrencies-component">
+  <p>
+    {{ 'Your account balance' | translate }}: {{ accountBalance }}
+    {{ currency }}
+  </p>
+  <div class="select-block">
+    <mat-form-field>
+      <mat-label>{{ 'Type' | translate }}</mat-label>
+      <mat-select (selectionChange)="selectType($event)">
+        <mat-option value="buy">{{ 'Buy' | translate }}</mat-option>
+        <mat-option value="sell">{{ 'Sell' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <form *ngIf="!!transactionType" [formGroup]="transactionForm">
+      <mat-form-field>
+        <mat-label>{{ 'Currencies' | translate }}</mat-label>
+        <mat-select
+          formControlName="currency"
+          (selectionChange)="changeCurrency($event)"
+        >
+          <mat-option
+            *ngFor="let curr of currencies | keyvalue"
+            [value]="curr"
+            >{{ curr?.key }}</mat-option
+          >
+        </mat-select>
+        <mat-error
+          *ngIf="transactionForm?.get('currency')?.hasError('required')"
+          >{{ 'Currency is required' | translate }}</mat-error
+        >
+      </mat-form-field>
+      <p *ngIf="!!selectedCurrencyValue">
+        {{ 'Cost of a single cryptocurrency' | translate }}:
+        {{ selectedCurrencyValue }} PLN
+      </p>
+
+      <mat-form-field>
+        <mat-label>{{ 'Amount' | translate }}</mat-label>
+        <input
+          type="number"
+          matInput
+          formControlName="amount"
+          min="0"
+          [max]="currencyAmount"
+        />
+        <mat-error
+          *ngIf="transactionForm?.get('amount')?.hasError('required')"
+          >{{ 'Amount is required' | translate }}</mat-error
+        >
+      </mat-form-field>
+
+      <div class="footer">
+        <button
+          mat-button
+          mat-raised-button
+          color="primary"
+          class="large-btn sign-up-button"
+          (click)="trade()"
+        >
+          {{ 'Confirm' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,1 +1,8 @@
-<inzynieria-oprogramowania-menu></inzynieria-oprogramowania-menu>
+<inzynieria-oprogramowania-menu>
+  <mat-progress-bar
+    mode="indeterminate"
+    color="accent"
+    *ngIf="progressBarVisible$ | async"
+  ></mat-progress-bar>
+  <router-outlet></router-outlet>
+</inzynieria-oprogramowania-menu>

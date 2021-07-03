@@ -7,5 +7,5 @@ import { CryptocurrencyBlock } from '../../../models/cryptocurrency.data';
   styleUrls: ['./currency.component.scss'],
 })
 export class CurrencyComponent {
-  @Input() public cryptocurrency: CryptocurrencyBlock;
+  @Input() public cryptocurrency: { key: string; value: number };
 }

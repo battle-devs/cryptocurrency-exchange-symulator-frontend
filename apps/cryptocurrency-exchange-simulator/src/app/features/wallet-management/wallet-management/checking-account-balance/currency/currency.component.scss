@@ -1,0 +1,10 @@
+@import 'apps/cryptocurrency-exchange-simulator/src/assets/theme';
+
+.currency-component {
+  background-color: $black-dark;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

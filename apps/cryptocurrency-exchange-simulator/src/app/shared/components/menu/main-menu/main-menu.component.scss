@@ -29,6 +29,10 @@ mat-sidenav {
   background-color: $black-dark;
   color: $white-light;
   font-family: $font-family-text;
+  .main-tabs,
+  .authorization-tabs {
+    margin-bottom: 30px;
+  }
 }
 
 .sidenav-container {
@@ -50,10 +54,13 @@ main {
 }
 
 select {
-  width: 90%;
-  margin: 5%;
+  width: calc(100% - 30px);
+  margin: 6px 15px;
   height: 40px;
   color: $white-light;
-  background-color: $black-dark;
-  border: $black-dark;
+  background-color: $black-very-dark;
+  border: $black-very-dark;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 7px;
 }

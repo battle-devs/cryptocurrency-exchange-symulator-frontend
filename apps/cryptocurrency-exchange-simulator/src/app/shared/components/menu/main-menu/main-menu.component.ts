@@ -11,7 +11,9 @@ export class MainMenuComponent {
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'pl']);
-    translate.setDefaultLang('en');
+    const savedLang = localStorage.getItem('lang');
+    translate.setDefaultLang(savedLang ? savedLang : 'en');
+    this.switchLang(savedLang);
   }
 
   public onSidenavClick(): void {
@@ -20,5 +22,6 @@ export class MainMenuComponent {
 
   public switchLang(lang: string) {
     this.translate.use(lang);
+    localStorage.setItem('lang', lang);
   }
 }

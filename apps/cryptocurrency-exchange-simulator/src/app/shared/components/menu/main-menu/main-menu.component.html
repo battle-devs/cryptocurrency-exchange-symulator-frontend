@@ -15,7 +15,24 @@
       class="sidenav"
       (click)="onSidenavClick()"
     >
-      <a mat-button routerLink="/home">{{ 'Home' | translate }}</a>
+      <div class="main-tabs">
+        <a mat-button routerLink="/home">{{ 'Home' | translate }}</a>
+        <a mat-button routerLink="/current-quotes">{{
+          'Current quotes' | translate
+        }}</a>
+        <a mat-button routerLink="/ranking">{{ 'Ranking' | translate }}</a>
+        <a mat-button routerLink="/wallet-management/change-currency">{{
+          'Wallet management' | translate
+        }}</a>
+      </div>
+      <div class="authorization-tabs">
+        <a mat-button routerLink="/authorization/registration">{{
+          'Sign up' | translate
+        }}</a>
+        <a mat-button routerLink="/authorization/login">{{
+          'Sign in' | translate
+        }}</a>
+      </div>
       <span class="form-inline" (click)="$event.stopPropagation()">
         <select
           class="form-control"
@@ -27,14 +44,14 @@
             [value]="language"
             [selected]="language === translate.currentLang"
           >
-            {{ language }}
+            {{ language | uppercase }}
           </option>
         </select>
       </span>
     </mat-sidenav>
     <mat-sidenav-content>
       <main>
-        <router-outlet></router-outlet>
+        <ng-content></ng-content>
       </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
