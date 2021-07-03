@@ -1,0 +1,13 @@
+.select-block {
+  margin-top: 50px;
+  form {
+    display: flex;
+    flex-direction: column;
+    mat-form-field {
+      width: 26%;
+    }
+    .footer {
+      margin-top: 50px;
+    }
+  }
+}
