@@ -61,6 +61,7 @@ export class ChangeCurrencyComponent implements OnInit, OnDestroy {
         .plnToUsd({ userName: username })
         .pipe(takeWhile(() => this._alive))
         .subscribe(() => {
+          this.currency = 'USD';
           this._snackBar.open('Currency changed!', 'Success', {
             duration: 5000,
           });
@@ -70,6 +71,7 @@ export class ChangeCurrencyComponent implements OnInit, OnDestroy {
         .usdToPln({ userName: username })
         .pipe(takeWhile(() => this._alive))
         .subscribe(() => {
+          this.currency = 'PLN';
           this._snackBar.open('Currency changed!', 'Success', {
             duration: 5000,
           });

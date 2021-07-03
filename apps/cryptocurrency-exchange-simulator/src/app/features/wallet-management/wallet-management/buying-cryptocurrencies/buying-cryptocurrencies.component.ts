@@ -12,10 +12,14 @@ export class BuyingCryptocurrenciesComponent implements OnInit {
     private readonly _currenciesService: CurrenciesService,
     private readonly _profileService: ProfileService
   ) {}
-  public currencies$ = this._currenciesService.getCurrenciesList();
-  public user$ = this._profileService.getUser(
-    JSON.parse(sessionStorage.getItem('userId'))
-  );
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._profileService
+      .getUser(JSON.parse(sessionStorage.getItem('userId')))
+      .subscribe((x) => console.log(x));
+
+    this._currenciesService
+      .getCurrenciesList()
+      .subscribe((x) => console.log(x));
+  }
 }
