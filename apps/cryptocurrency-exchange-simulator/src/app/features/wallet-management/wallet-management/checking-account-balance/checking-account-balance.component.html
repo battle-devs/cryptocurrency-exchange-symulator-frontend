@@ -4,8 +4,8 @@
     <mat-icon> account_balance_wallet</mat-icon>
   </div>
 
-  <div class="assets-list" *ngFor="let currency of currencies">
-    <div class="asset">
+  <div class="assets-list">
+    <div class="asset" *ngFor="let currency of currencies">
       <inzynieria-oprogramowania-currency
         [asset]="currency"
       ></inzynieria-oprogramowania-currency>

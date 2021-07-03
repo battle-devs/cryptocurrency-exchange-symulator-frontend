@@ -166,5 +166,5 @@ mat-icon {
   color: $white-light;
 }
 .mat-drawer-content {
-  height: 110vh !important;
+  overflow: initial !important;
 }

@@ -12,6 +12,7 @@ import {
   withLatestFrom,
 } from 'rxjs/operators';
 import { RealtimeChartOptions } from 'ngx-graph';
+import { ProgressBarService } from '../../../core/services/progress-bar.service';
 
 @Component({
   selector: 'inzynieria-oprogramowania-current-quotes',
@@ -19,7 +20,12 @@ import { RealtimeChartOptions } from 'ngx-graph';
   styleUrls: ['./current-quotes.component.scss'],
 })
 export class CurrentQuotesComponent {
-  constructor(private readonly _currenciesService: CurrenciesService) {}
+  constructor(
+    private readonly _currenciesService: CurrenciesService,
+    private readonly _progressBarService: ProgressBarService
+  ) {
+    _progressBarService.show();
+  }
   public max = 5;
   private prev = 0;
 
@@ -35,8 +41,10 @@ export class CurrentQuotesComponent {
     { name: 'Sushi', value: 'sushipln' },
   ];
   public data$ = this.selectedCurrencySubject.asObservable().pipe(
+    tap(() => this._progressBarService.show()),
     switchMap(() =>
-      interval(5000).pipe(
+      interval(2000).pipe(
+        tap(() => this._progressBarService.hide()),
         switchMap(() =>
           this._currenciesService
             .getCurrency(this.selectedCurrencySubject.value)
